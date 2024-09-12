@@ -16,7 +16,7 @@ body {
   width: 32px;
   height: 32px;
   position: absolute;
-  background-image: url("img/cursor/css_sprites.png");
+  background-image: url("https://raw.githubusercontent.com/BlackStar1991/Stalker/master/img/cursor/css_sprites.png");
   background-size: 256px 32px;
   pointer-events: none;
   z-index: 9999;
@@ -151,7 +151,7 @@ ul {
   right: 8px;
   width: 18px;
   height: 18px;
-  background: url("img/icons/shell.png") 50% 50% no-repeat;
+  background: url("https://raw.githubusercontent.com/BlackStar1991/Stalker/master/img/icons/shell.png") 50% 50% no-repeat;
   z-index: 5;
 }
 
@@ -171,7 +171,7 @@ ul {
 }
 
 .armor_head {
-  background: url("img/icons/gas.png") 50% 50% no-repeat;
+  background: url("https://raw.githubusercontent.com/BlackStar1991/Stalker/master/img/icons/gas.png") 50% 50% no-repeat;
 }
 .armor_head:hover video {
   opacity: 1;
@@ -225,7 +225,7 @@ ul {
 
 .bl_equipment__main {
   padding: 20px 32px;
-  background-image: url("img/qa/1-t.jpg"), url("img/qa/1-b.jpg");
+  background-image: url("https://raw.githubusercontent.com/BlackStar1991/Stalker/master/img/qa/1-t.jpg"), url("https://raw.githubusercontent.com/BlackStar1991/Stalker/master/img/qa/1-b.jpg");
 }
 
 .bl_equipment__main::before,
@@ -241,12 +241,12 @@ ul {
 
 .bl_equipment__main::before {
   left: 0;
-  background-image: url("img/qa/1-l.jpg");
+  background-image: url("https://raw.githubusercontent.com/BlackStar1991/Stalker/master/img/qa/1-l.jpg");
 }
 
 .bl_equipment__main::after {
   right: 0;
-  background-image: url("img/qa/1-r.jpg");
+  background-image: url("https://raw.githubusercontent.com/BlackStar1991/Stalker/master/img/qa/1-r.jpg");
 }
 
 .bl_qa {
@@ -281,7 +281,7 @@ ul {
 }
 
 .bl_equipment__top {
-  background: url("img/qa/1-1.jpg") 50% 50% no-repeat;
+  background: url("https://raw.githubusercontent.com/BlackStar1991/Stalker/master/img/qa/1-1.jpg") 50% 50% no-repeat;
 }
 
 .bl_inventory {
@@ -291,12 +291,12 @@ ul {
 }
 
 .bl_inventory__top {
-  background: url("img/inventory/2-1.jpg") 50% 50% no-repeat;
+  background: url("https://raw.githubusercontent.com/BlackStar1991/Stalker/master/img/inventory/2-1.jpg") 50% 50% no-repeat;
 }
 
 .bl_inventory__main {
   padding: 20px 16px;
-  background-image: url("img/inventory/2-t.jpg"), url("img/inventory/2-b.jpg");
+  background-image: url("https://raw.githubusercontent.com/BlackStar1991/Stalker/master/img/inventory/2-t.jpg"), url("https://raw.githubusercontent.com/BlackStar1991/Stalker/master/img/inventory/2-b.jpg");
 }
 
 .bl_inventory__main:before, .bl_inventory__main:after {
@@ -311,12 +311,12 @@ ul {
 
 .bl_inventory__main::before {
   left: 0;
-  background-image: url("img/inventory/2-l.jpg");
+  background-image: url("https://raw.githubusercontent.com/BlackStar1991/Stalker/master/img/inventory/2-l.jpg");
 }
 
 .bl_inventory__main::after {
   right: 0;
-  background-image: url("img/inventory/2-r.jpg");
+  background-image: url("https://raw.githubusercontent.com/BlackStar1991/Stalker/master/img/inventory/2-r.jpg");
 }
 
 .inventory {
