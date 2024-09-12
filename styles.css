@@ -8,8 +8,29 @@ body {
   font-family: Roboto, sans-serif;
   font-weight: 600;
   color: #D2D2C4;
+  cursor: none;
+  overflow: hidden;
 }
 
+.custom-cursor {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  background-image: url("img/cursor/css_sprites.png");
+  background-size: 256px 32px;
+  pointer-events: none;
+  z-index: 9999;
+  animation: cursor-animation 1s steps(8) infinite;
+}
+
+@keyframes cursor-animation {
+  from {
+    background-position: 0 0;
+  }
+  to {
+    background-position: -256px 0;
+  }
+}
 ul {
   padding: 0;
   list-style-type: none;
@@ -23,13 +44,13 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  overflow: hidden;
 }
 
 .main {
   width: 100%;
   display: flex;
   flex-direction: row;
+  align-items: center;
 }
 
 #background-video {
@@ -66,13 +87,14 @@ ul {
   height: 38px;
   line-height: 38px;
   text-align: center;
+  user-select: none;
 }
 
 .gr {
+  position: relative;
   box-sizing: border-box;
   border: 2px solid #000;
-  outline: 1px solid rgba(30, 32, 29, 0.4);
-  outline-offset: 3px;
+  outline: 2px solid rgba(30, 32, 29, 0.2);
   background-image: linear-gradient(#0e130f 2px, transparent 2px), linear-gradient(90deg, #0e130f 2px, transparent 2px);
   background-size: 2px 2px;
   background-color: #0B100A;
@@ -81,6 +103,28 @@ ul {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.anomalies .gr:empty:after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-image: url("data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 60 60%22 style=%22enable-background:new 0 0 60 60%22 xml:space=%22preserve%22%3E%3Cstyle%3E.st1,.st2%7Bfill:none;stroke-miterlimit:10%7D.st1%7Bstroke:%23111411;stroke-width:6%7D.st2%7Bstroke:%23000%7D%3C/style%3E%3Cg%3E%3Cpath class=%22st1%22 d=%22m0 0 60 60M0 61 60 0%22/%3E%3Cpath class=%22st2%22 d=%22m1.5-1.5 29 29M29.5 32.5l29 29M-1.5 1.5l29 29M32.5 29.5l29 29M-1.5 59.5l29-29M1.5 62.5l29-30M32.6 30.1 61.5 1.5M30.5 27.5l28-29%22/%3E%3C/g%3E%3C/svg%3E");
+}
+
+.bl_qa__item .el {
+  max-height: 50px;
+  max-width: 50px;
+}
+
+.bl_qa__item .el img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
 }
 
 .gr2 {
@@ -100,17 +144,43 @@ ul {
   grid-gap: 15px;
 }
 
+.dem:after {
+  content: "";
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 18px;
+  height: 18px;
+  background: url("img/icons/shell.png") 50% 50% no-repeat;
+  z-index: 5;
+}
+
 .weapon_left {
   grid-row: 1/4;
+}
+.weapon_left img {
+  transform: rotate(-90deg) scale(1, -1);
 }
 
 .weapon_right {
   grid-column: 3/4;
   grid-row: 1/4;
 }
+.weapon_right img {
+  transform: rotate(-90deg);
+}
 
 .armor_head {
   background: url("img/icons/gas.png") 50% 50% no-repeat;
+}
+.armor_head:hover video {
+  opacity: 1;
+}
+
+.armor_head video {
+  opacity: 0;
+  max-width: 100%;
+  object-fit: contain;
 }
 
 .armor_body {
@@ -257,10 +327,44 @@ ul {
 }
 
 .gri {
+  position: relative;
   box-sizing: border-box;
   border: 1px solid #0B100C;
   background-color: #090B08;
   box-shadow: inset 0 0 40px 0 rgba(0, 0, 0, 0.5);
+}
+
+.gri:has(.el[data-l="2"]) {
+  grid-column: span 2;
+}
+
+.gri:has(.el[data-b="2"]) {
+  grid-row: span 2;
+}
+
+.gri:has(.el[data-b="2"][data-l="2"]) {
+  grid-column: span 2;
+  grid-row: span 2;
+}
+
+.gri:has(.el[data-b="2"][data-l="4"]) {
+  grid-column: span 4;
+  grid-row: span 2;
+}
+
+.gri:has(.el[data-b="2"][data-l="7"]) {
+  grid-column: span 7;
+  grid-row: span 2;
+}
+
+.el:before {
+  content: attr(data-num);
+  position: absolute;
+  bottom: 2px;
+  right: 2px;
+  color: #fff;
+  font-weight: 400;
+  z-index: 1;
 }
 
 .bl_inventory__bottom {
@@ -336,6 +440,11 @@ ul {
   display: inline-block;
   font-size: 19px;
   font-weight: 400;
+}
+
+.logo {
+  cursor: none;
+  filter: drop-shadow(0 0 0.75rem #ff0);
 }
 
 /*# sourceMappingURL=styles.css.map */
